@@ -8,6 +8,7 @@
 
 ## installation
 ```bash
+yarn add valtio
 yarn add @jswork/next-react-valtio
 ```
 
