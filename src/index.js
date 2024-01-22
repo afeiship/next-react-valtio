@@ -10,7 +10,7 @@ const NxReactValtio = nx.declare('nx.ReactValtio', {
     init: function () {
       nx.$valtio = (initialState, inOptions) => {
         const store = useRef(proxy(initialState)).current;
-        const snapshot = useSnapshot(store);
+        const state = useSnapshot(store);
         const options = nx.mix(null, defaults, inOptions);
         const gettersEntries = {};
 
