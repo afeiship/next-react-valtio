@@ -4,5 +4,8 @@ interface IValtioOptions {
 
 interface NxStatic {
   ReactValtio: any;
-  $valtio: (initialState: T, options: IValtioOptions) => { store: T; state: any };
+  $valtio: (
+    initialState: T,
+    options: IValtioOptions
+  ) => { store: T; state: any; [key: string]: any };
 }
