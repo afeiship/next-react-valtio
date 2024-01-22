@@ -8,13 +8,12 @@ const defaults = { getters: {} };
 const NxReactValtio = nx.declare('nx.ReactValtio', {
   statics: {
     init: function () {
-      nx.$valtio = (initialState, inOptions) => {
+      nx.$valtio = (initialState, inGetters) => {
         const store = useRef(proxy(initialState)).current;
         const state = useSnapshot(store);
-        const options = nx.mix(null, defaults, inOptions);
-        const gettersEntries = useRef(options.getters || {}).current;
+        const gettersEntries = useRef(inGetters || {}).current;
 
-        nx.forIn(options.getters, (key, value) => {
+        nx.forIn(gettersEntries, (key, value) => {
           const getterFn = () => value(store);
           gettersEntries[key] = getterFn;
         });
