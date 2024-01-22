@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-react-valtio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Valtio for react.",
   "homepage": "https://js.work",
   "author": {
@@ -46,5 +46,12 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "keywords": []
+  "keywords": [
+    "next",
+    "proxy",
+    "react",
+    "state",
+    "store",
+    "valtio"
+  ]
 }
