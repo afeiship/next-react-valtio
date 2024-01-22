@@ -12,7 +12,7 @@ const NxReactValtio = nx.declare('nx.ReactValtio', {
         const store = useRef(proxy(initialState)).current;
         const state = useSnapshot(store);
         const options = nx.mix(null, defaults, inOptions);
-        const gettersEntries = {};
+        const gettersEntries = useRef(options.getters || {}).current;
 
         nx.forIn(options.getters, (key, value) => {
           const getterFn = () => value(store);
