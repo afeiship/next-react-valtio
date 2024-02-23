@@ -16,8 +16,8 @@ const NxReactValtio = nx.declare('nx.ReactValtio', {
           gettersEntries[key] = getterFn;
         });
 
-        const getters = derive(gettersEntries);
-        return { state, store, getters };
+        const computed = derive(gettersEntries);
+        return { state, store, computed };
       };
     }
   }

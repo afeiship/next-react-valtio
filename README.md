@@ -19,7 +19,10 @@ import '@jswork/next-react-valtio';
 
 ```jsx
 const InteractiveList = () => {
-  const { state, store, getters } = nx.$valtio<number[]>([1, 2, 3, 4]);
+  const getters = {
+    size: (state) => state.length
+  };
+  const { state, store, computed } = nx.$valtio<number[]>([1, 2, 3, 4], getters);
   return (
     <div className="bg-slate-100 p-2">
       <h1>Vite + React</h1>
