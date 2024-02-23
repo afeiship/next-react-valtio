@@ -3,11 +3,9 @@ import { proxy, useSnapshot } from 'valtio';
 import { derive } from 'derive-valtio';
 import { useRef } from 'react';
 
-const defaults = { getters: {} };
-
 const NxReactValtio = nx.declare('nx.ReactValtio', {
   statics: {
-    init: function () {
+    init: function() {
       nx.$valtio = (initialState, inGetters) => {
         const store = useRef(proxy(initialState)).current;
         const state = useSnapshot(store);
@@ -18,8 +16,8 @@ const NxReactValtio = nx.declare('nx.ReactValtio', {
           gettersEntries[key] = getterFn;
         });
 
-        const computed = derive(gettersEntries);
-        return { state, store, ...computed };
+        const getters = derive(gettersEntries);
+        return { state, store, getters };
       };
     }
   }
