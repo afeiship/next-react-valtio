@@ -1,11 +1,15 @@
 import nx from '@jswork/next';
 import { proxy, useSnapshot } from 'valtio';
+import { useProxy } from 'valtio/utils';
 import { derive } from 'derive-valtio';
 import { useRef } from 'react';
+import createValtioState from '@jswork/create-valtio-state';
 
 const NxReactValtio = nx.declare('nx.ReactValtio', {
   statics: {
     init: function() {
+      nx.$defineProxy = createValtioState;
+      nx.$useProxy = useProxy;
       nx.$valtio = (initialState, inGetters) => {
         const store = useRef(proxy(initialState)).current;
         const state = useSnapshot(store);

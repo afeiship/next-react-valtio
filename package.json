@@ -17,6 +17,7 @@
   "module": "dist/index.esm.js",
   "license": "MIT",
   "devDependencies": {
+    "@jswork/create-valtio-state": "^1.0.1",
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "@jswork/gulp-pkg-header": "^1.0.8",
@@ -57,5 +58,8 @@
     "derived",
     "getters",
     "val"
-  ]
+  ],
+  "peerDependencies": {
+    "@jswork/create-valtio-state": "^1.0.1"
+  }
 }

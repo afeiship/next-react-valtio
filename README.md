@@ -9,6 +9,7 @@
 ## installation
 ```bash
 yarn add valtio derive-valtio
+yarn add @jswork/create-valtio-state
 yarn add @jswork/next-react-valtio
 ```
 
@@ -48,6 +49,11 @@ const InteractiveList = () => {
 
 export default InteractiveList;
 ```
+
+## api
+- nx.$valtio(initialState, getters): create a valtio store with initialState and getters.
+- nx.$defineProxy(initialState): create a valtio proxy with initialState.
+- nx.$useProxy(store): create a valtio proxy with store.
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/next-react-valtio/blob/master/LICENSE.txt).
