@@ -51,9 +51,10 @@ export default InteractiveList;
 ```
 
 ## api
-- nx.$valtio(initialState, getters): create a valtio store with initialState and getters.
-- nx.$defineProxy(initialState): create a valtio proxy with initialState.
-- nx.$useProxy(store): create a valtio proxy with store.
+- `nx.$valtio(initialState, getters)`: create a valtio store with initialState and getters.
+- `nx.$defineProxy(initialState)`: create a valtio proxy with initialState.
+- `nx.$useProxy(store)`: create a valtio proxy with store.
+- `nx.$useStore(initialState)`: create a valtio store with initialState.
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/next-react-valtio/blob/master/LICENSE.txt).

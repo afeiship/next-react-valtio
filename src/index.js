@@ -7,9 +7,16 @@ import createValtioState from '@jswork/create-valtio-state';
 
 const NxReactValtio = nx.declare('nx.ReactValtio', {
   statics: {
-    init: function() {
+    init: function () {
       nx.$defineProxy = createValtioState;
       nx.$useProxy = useProxy;
+
+      nx.$useStore = (initialState) => {
+        const state = useRef(proxy(initialState)).current;
+        const snap = useSnapshot(state);
+        return { state, snap };
+      };
+
       nx.$valtio = (initialState, inGetters) => {
         const store = useRef(proxy(initialState)).current;
         const state = useSnapshot(store);
